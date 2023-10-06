@@ -19,4 +19,18 @@ Crab.get_ByID = function(id)
     var data = {"id":id, "name": "Crab 1"}
     return data;
 }
+
+Crab.createNewcrab = function(data , result)
+{
+    result(data); //Luc nay chi dang fake du lieu
+}
+
+Crab.remove = function(id, result)
+{
+    result("Xoa crab co id"+id+ "thanh cong");
+}
+Crab.update = function(data, result)
+{
+    result(data);
+}
 module.exports = Crab;
