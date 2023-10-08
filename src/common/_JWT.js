@@ -21,8 +21,22 @@ let make = function(user )
     })
 }
 
-module.exports= {
-    make: make
+//check => xac thuc ma dung, sai, het han
+
+let check = function (token)
+{
+    return new Promise((resolve, reject) =>
+    {
+        jwt.verify(token, process.env.ACCESS_TOKEN, function(err, data)
+        {
+            if(err) return reject(err);
+            return resolve(data);
+        })
+    })
 }
 
-//check => xac thuc ma dung, sai, het han
+module.exports= {
+    make: make,
+    check: check,
+}
+
